@@ -97,6 +97,21 @@
     background:var(--pill-bg); color:var(--pill-text);
   }
 
+  .shots{
+    display:flex; gap:16px; overflow-x:auto; padding:4px 0 16px; margin:0;
+    scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch;
+  }
+  .shots::-webkit-scrollbar{height:8px}
+  .shots::-webkit-scrollbar-track{background:transparent}
+  .shots::-webkit-scrollbar-thumb{background:var(--border); border-radius:999px}
+  .shots figure{flex:0 0 auto; width:232px; margin:0; scroll-snap-align:start}
+  .shots img{
+    width:100%; height:auto; border:1px solid var(--border); border-radius:20px;
+    background:var(--card);
+  }
+  .shots figcaption{margin-top:9px; font-size:12.5px; color:var(--muted); text-align:center}
+  @media (max-width:620px){ .shots figure{width:200px} }
+
   .brokers{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px}
   .brokers span{
     font-size:13px; font-weight:600; color:var(--text);
@@ -126,6 +141,7 @@
     <div class="brand"><img src="assets/icon-512.png" alt="NivCraft logo"> NivCraft</div>
     <nav class="links">
       <a href="#features">Features</a>
+      <a href="#screens">Screenshots</a>
       <a href="#brokers">Brokers</a>
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
@@ -188,6 +204,47 @@
           <h3>Cross-device sync &amp; notifications</h3>
           <p>Your watchlists follow your account across devices. Fills and signals arrive as push notifications.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <div class="wrap">
+      <h2>See it in action</h2>
+      <p class="sub">A few screens from the app. Everything shown is simulated with virtual funds &mdash; scroll sideways for more.</p>
+      <div class="shots">
+        <figure>
+          <img src="assets/screens/01-home.png" width="720" height="1480" loading="lazy" alt="NivCraft home screen with quick actions and connected markets">
+          <figcaption>Home &amp; market access</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/02-watchlist.png" width="720" height="1480" loading="lazy" alt="Watchlist in grid view with live quotes and colour-coded moves">
+          <figcaption>Live watchlist (grid view)</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/03-signals.png" width="720" height="1480" loading="lazy" alt="Technical signals list with scan configuration">
+          <figcaption>Signals &amp; scans</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/04-live-fno.png" width="720" height="1480" loading="lazy" alt="Live futures and options scan with entry and exit conditions">
+          <figcaption>Live F&amp;O scan</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/05-backtest.png" width="720" height="1480" loading="lazy" alt="Backtest configuration for an entry and exit strategy">
+          <figcaption>Backtesting</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/06-option-chain.png" width="720" height="1480" loading="lazy" alt="Option chain with live premiums by strike">
+          <figcaption>Option chain</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/07-positions.png" width="720" height="1480" loading="lazy" alt="Open simulated positions with profit and loss">
+          <figcaption>Positions &amp; P&amp;L</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/screens/08-subscription.png" width="720" height="1480" loading="lazy" alt="Free versus premium tier comparison">
+          <figcaption>Free &amp; premium tiers</figcaption>
+        </figure>
       </div>
     </div>
   </section>
