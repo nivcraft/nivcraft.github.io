@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NivCraft — Paper-trading &amp; market watchlist app</title>
+<meta name="description" content="NivCraft is a paper-trading and market-watchlist app for Indian and global markets. Build watchlists, place simulated trades with virtual money, backtest ideas, and scan for signals with live prices from your own broker connection.">
+<link rel="canonical" href="https://nivcraft.github.io/">
+<link rel="icon" type="image/png" href="assets/icon-512.png">
+<meta name="theme-color" content="#157878">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NivCraft — Paper-trading &amp; market watchlist app">
+<meta property="og:description" content="Practice the markets with virtual money. Watchlists, simulated trading, backtesting and signals — with live prices from your own broker connection.">
+<meta property="og:url" content="https://nivcraft.github.io/">
+<meta property="og:image" content="https://nivcraft.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root{
+    --bg:#ffffff; --bg-soft:#f5f7f7; --card:#ffffff; --border:#e2e8e8;
+    --text:#12201f; --muted:#5b6b6a; --accent:#0f6f6a; --accent-ink:#ffffff;
+    --pill-bg:#e6f2f1; --pill-text:#0f6f6a;
+    --maxw:1060px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0c1413; --bg-soft:#111c1b; --card:#111c1b; --border:#22302f;
+      --text:#e8efee; --muted:#9fb0ae; --accent:#3fb8ad; --accent-ink:#06201e;
+      --pill-bg:#13302d; --pill-text:#6fd6cb;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  a{color:var(--accent); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+  img{max-width:100%; display:block}
+
+  header.site{
+    position:sticky; top:0; z-index:10; background:color-mix(in srgb,var(--bg) 88%, transparent);
+    backdrop-filter:saturate(180%) blur(8px); border-bottom:1px solid var(--border);
+  }
+  .navrow{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:-.01em}
+  .brand img{width:28px; height:28px; border-radius:7px}
+  nav.links{display:flex; gap:22px; font-size:14px}
+  nav.links a{color:var(--muted)}
+  nav.links a:hover{color:var(--text); text-decoration:none}
+  @media (max-width:620px){ nav.links{display:none} }
+
+  .hero{padding:72px 0 40px}
+  .pill{
+    display:inline-block; font-size:12.5px; font-weight:600; letter-spacing:.02em;
+    color:var(--pill-text); background:var(--pill-bg); border-radius:999px; padding:6px 12px;
+  }
+  h1{
+    font-size:clamp(2rem,6vw,3.1rem); line-height:1.08; letter-spacing:-.02em;
+    margin:18px 0 14px;
+  }
+  .lede{font-size:clamp(1.02rem,2.4vw,1.2rem); color:var(--muted); max-width:60ch}
+  .cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:26px}
+  .btn{
+    display:inline-block; padding:11px 18px; border-radius:10px; font-weight:600; font-size:14.5px;
+    background:var(--accent); color:var(--accent-ink); border:1px solid transparent;
+  }
+  .btn:hover{text-decoration:none; filter:brightness(1.05)}
+  .btn.ghost{background:transparent; color:var(--text); border-color:var(--border)}
+  .note{font-size:13px; color:var(--muted); margin-top:14px}
+
+  section{padding:44px 0; border-top:1px solid var(--border)}
+  h2{font-size:clamp(1.4rem,3.4vw,1.9rem); letter-spacing:-.01em; margin:0 0 8px}
+  section > .wrap > p.sub{color:var(--muted); margin:0 0 26px; max-width:64ch}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
+  .card{
+    background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px 18px 16px;
+  }
+  .card h3{margin:2px 0 6px; font-size:1rem}
+  .card p{margin:0; font-size:14px; color:var(--muted)}
+  .tag{
+    display:inline-block; margin-top:10px; font-size:11.5px; font-weight:600; letter-spacing:.03em;
+    text-transform:uppercase; color:var(--muted); border:1px solid var(--border); border-radius:6px; padding:2px 7px;
+  }
+
+  ol.steps{counter-reset:s; list-style:none; padding:0; margin:0; display:grid; gap:14px}
+  ol.steps li{
+    position:relative; padding-left:46px; min-height:32px; color:var(--muted); font-size:14.5px;
+  }
+  ol.steps li b{color:var(--text); font-weight:600}
+  ol.steps li::before{
+    counter-increment:s; content:counter(s);
+    position:absolute; left:0; top:0; width:30px; height:30px; border-radius:8px;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px;
+    background:var(--pill-bg); color:var(--pill-text);
+  }
+
+  .brokers{display:flex; flex-wrap:wrap; gap:10px; margin-top:6px}
+  .brokers span{
+    font-size:13px; font-weight:600; color:var(--text);
+    background:var(--bg-soft); border:1px solid var(--border); border-radius:999px; padding:7px 14px;
+  }
+
+  .faq{display:grid; gap:12px}
+  .faq details{
+    background:var(--card); border:1px solid var(--border); border-radius:12px; padding:4px 16px;
+  }
+  .faq summary{cursor:pointer; font-weight:600; padding:12px 0; list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+"; float:right; color:var(--muted); font-weight:700}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{margin:0 0 14px; font-size:14px; color:var(--muted)}
+
+  footer.site{border-top:1px solid var(--border); padding:34px 0 48px; color:var(--muted); font-size:13.5px}
+  footer.site .frow{display:flex; flex-wrap:wrap; gap:8px 22px; align-items:center; justify-content:space-between}
+  footer.site a{color:var(--muted)}
+  .disclaimer{margin-top:18px; font-size:12.5px; color:var(--muted); max-width:80ch}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap navrow">
+    <div class="brand"><img src="assets/icon-512.png" alt="NivCraft logo"> NivCraft</div>
+    <nav class="links">
+      <a href="#features">Features</a>
+      <a href="#brokers">Brokers</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://nivcraft.github.io/legal/">Legal</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <span class="pill">Coming soon to Google Play</span>
+    <h1>Practice the markets. Risk nothing.</h1>
+    <p class="lede">
+      NivCraft is a paper-trading and market-watchlist app for Indian and global markets.
+      Build watchlists, place simulated trades with virtual money, backtest ideas, and scan
+      for signals &mdash; with live prices from your own broker connection.
+    </p>
+    <div class="cta">
+      <a class="btn" href="#features">Explore features</a>
+      <a class="btn ghost" href="mailto:support.nivcraft@gmail.com?subject=NivCraft%20early%20access">Request early access</a>
+    </div>
+    <p class="note">Currently in closed testing on Google Play. Public release planned soon.</p>
+  </div>
+
+  <section id="features">
+    <div class="wrap">
+      <h2>What you can do</h2>
+      <p class="sub">Everything is simulated. NivCraft is a practice and research tool, not a brokerage.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Multi-broker watchlists</h3>
+          <p>Track equities, indices, futures and options across list and grid views, with live quotes and colour-coded moves.</p>
+        </div>
+        <div class="card">
+          <h3>Simulated trading</h3>
+          <p>Open and close positions with virtual funds. Track P&amp;L, margin, and a full trade history over time.</p>
+        </div>
+        <div class="card">
+          <h3>Backtesting</h3>
+          <p>Run a strategy over historical data and see how it would have performed, including open-position mark-to-market.</p>
+        </div>
+        <div class="card">
+          <h3>Signals &amp; alerts</h3>
+          <p>Scan instruments against rule-based criteria and get a push notification when a setup triggers.</p>
+        </div>
+        <div class="card">
+          <h3>Live F&amp;O scan</h3>
+          <p>Continuously watch futures and options for entry and exit conditions while the market is open.</p>
+        </div>
+        <div class="card">
+          <h3>Option chain</h3>
+          <p>Browse strikes with live premiums and build option positions straight from the chain.</p>
+        </div>
+        <div class="card">
+          <h3>Interactive charts</h3>
+          <p>Full-screen instrument charts with indicators and drawing tools, opened from any watchlist row.</p>
+          <span class="tag">In development</span>
+        </div>
+        <div class="card">
+          <h3>Cross-device sync &amp; notifications</h3>
+          <p>Your watchlists follow your account across devices. Fills and signals arrive as push notifications.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="brokers">
+    <div class="wrap">
+      <h2>Bring your own broker</h2>
+      <p class="sub">
+        Connect your own brokerage account through its official OAuth flow to add live prices and market
+        data. Data is fetched with your own credentials and is never shared with other users. A broker
+        connection is optional &mdash; you can use NivCraft without one.
+      </p>
+      <div class="brokers">
+        <span>Upstox</span><span>FYERS</span><span>5paisa</span><span>Alpaca</span><span>Binance</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><b>Sign in with Google</b> &mdash; your account keeps your watchlists and history.</li>
+        <li><b>Connect a broker</b> (optional) for live prices and market data.</li>
+        <li><b>Build a watchlist</b> of the instruments you want to follow.</li>
+        <li><b>Place simulated trades</b> and track how your ideas perform over time.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>FAQ</h2>
+      <div class="faq">
+        <details>
+          <summary>Is this real trading?</summary>
+          <p>No. Every trade in NivCraft is simulated with virtual funds. NivCraft is not a broker, does
+             not execute real orders, and nothing in the app is investment advice.</p>
+        </details>
+        <details>
+          <summary>Do I need a broker account?</summary>
+          <p>It's optional. You can use NivCraft without one. Connecting a broker adds live prices and
+             market data to your watchlists and simulations.</p>
+        </details>
+        <details>
+          <summary>Is my data private?</summary>
+          <p>Yes. Market data is retrieved using your own broker credentials on your device and is never
+             shared with other users. See the <a href="https://nivcraft.github.io/legal/privacy-policy">Privacy Policy</a> for details.</p>
+        </details>
+        <details>
+          <summary>What does it cost?</summary>
+          <p>NivCraft is free with ads, with an optional premium tier that removes ads and raises usage limits.</p>
+        </details>
+        <details>
+          <summary>When does it launch?</summary>
+          <p>It's in closed testing now. General release on Google Play is planned soon &mdash;
+             <a href="mailto:support.nivcraft@gmail.com?subject=NivCraft%20early%20access">email us</a> to be notified.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="frow">
+      <div>&copy; 2026 NivCraft</div>
+      <div>
+        <a href="https://nivcraft.github.io/legal/privacy-policy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+        <a href="https://nivcraft.github.io/legal/terms-and-conditions">Terms &amp; Conditions</a> &nbsp;&middot;&nbsp;
+        <a href="https://nivcraft.github.io/legal/delete-account">Account &amp; Data Deletion</a> &nbsp;&middot;&nbsp;
+        <a href="mailto:support.nivcraft@gmail.com">support.nivcraft@gmail.com</a>
+      </div>
+    </div>
+    <p class="disclaimer">
+      NivCraft is an independent paper-trading and educational application. It is not affiliated with,
+      endorsed by, or connected to any exchange or brokerage. Simulated performance does not represent
+      real trading results. Market data shown in the app is provided through the user's own connected
+      broker account. Nothing in NivCraft constitutes financial or investment advice.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
