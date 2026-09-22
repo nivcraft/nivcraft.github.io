@@ -13,7 +13,7 @@ Plain static HTML — no build step. `.nojekyll` disables Jekyll processing.
 | `assets/og-image.png` | Open Graph / social preview image (Play feature graphic) |
 | `.nojekyll` | Tells GitHub Pages to serve the files as-is |
 
-Legal documents live in the separate [`nivcraft/legal`](https://github.com/nivcraft/legal)
+Legal documents live under [`/legal`](https://nivcraft.in/legal/) in this repository
 repo and render at <https://nivcraft.github.io/legal/>. This page links to them; it does not
 duplicate them.
 
