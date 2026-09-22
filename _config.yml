@@ -1,0 +1,7 @@
+title: NivCraft
+description: NivCraft - market learning, paper trading, analytics, and related services.
+theme: jekyll-theme-cayman
+markdown: kramdown
+
+github:
+  is_project_page: false
