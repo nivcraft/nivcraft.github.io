@@ -7,9 +7,10 @@ const read = name => readFileSync(new URL(`../legal/${name}.md`, import.meta.url
 for (const name of ['privacy-policy', 'terms-and-conditions', 'delete-account']) {
   test(`${name} discloses synced settings and local deletion limits`, () => {
     const text = read(name);
-    for (const category of ['watchlist', 'strateg', 'Signals', 'Full Universe Scan (Universal Scan)', 'Live F&O', 'backtest']) {
+    for (const category of ['watchlist', 'strateg', 'Signals', 'Live F&O', 'backtest']) {
       assert.ok(text.includes(category), `Missing ${category}`);
     }
+    assert.doesNotMatch(text, /full[ -]universe|universal[ -]scan|full[ -]catalog(?:ue)?[ -]scan/i);
     assert.match(text, /cannot remotely erase/);
     assert.match(text, /17 October 2026/);
     assert.doesNotMatch(text, /Signal preferences and results stay on the device/);
