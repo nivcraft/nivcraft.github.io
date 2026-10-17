@@ -1,7 +1,7 @@
 # Terms & Conditions for NivCraft
 
-**Terms version:** 2026-09-19
-**Effective date:** 19 September 2026
+**Terms version:** 2026-10-17
+**Effective date:** 17 October 2026
 
 These Terms & Conditions ("Terms") form an agreement between you and NivCraft ("NivCraft", "we", "us", or "our") concerning the NivCraft mobile application and related services. NivCraft is operated by the developer identified for NivCraft in its Google Play listing. Contact: **support@nivcraft.in**.
 
@@ -27,7 +27,7 @@ Market availability is based on the region you confirm in NivCraft and the marke
 
 Paper wallets are simulated balances, not bank accounts, stored value, securities accounts, or real currency holdings. A trade uses the applicable simulated wallet and its settlement currency. NivCraft does not automatically move funds between your paper wallets. Where a displayed amount is converted, the conversion is an estimate using the configured currency-data provider and may differ from an executable exchange rate.
 
-Live paper wallets, pending orders, positions, signal preferences, backtest configurations and results, and market-data caches are local-first on your device and are not synchronized to the backend or restorable across devices. Your closed trade history and your watchlists are synchronized to the backend and are restored when you reinstall NivCraft or sign in on a new device; the backend also uses closed-history records to prepare the Community ladder and may approve restricted lifecycle actions such as a wallet reset. Device loss, app-data clearing, or uninstalling will remove your local-only wallet balances, positions, pending orders, and market-data cache unless covered by an available device backup outside NivCraft's control; your closed trade history and watchlists can still be recovered from the backend as described above.
+Live paper wallets, pending orders, positions, generated signal histories, backtest configurations and results, and market-data caches are local-first on your device and are not synchronized to the backend or restorable across devices. Your closed trade history, watchlists, strategies, and scan settings for Signals, Full Universe Scan (Universal Scan), and Live F&O are saved locally first and synchronized to the backend for restoration when you reinstall NivCraft or sign in on a new device. Synchronization requires connectivity and a successful upload; changes that have not reached the backend cannot be restored from it. Generated scan results and signal histories remain device-only; the backend also uses closed-history records to prepare the Community ladder and may approve restricted lifecycle actions such as a wallet reset. Device loss, app-data clearing, or uninstalling will remove your local-only wallet balances, positions, pending orders, and market-data cache unless covered by an available device backup outside NivCraft's control; your closed trade history and watchlists can still be recovered from the backend as described above.
 
 Market data may come from connected brokers or other providers and may be delayed, incomplete, unavailable, adjusted, or incorrect. Simulated fills, charges, margin, liquidity, slippage, taxes, corporate actions, contract specifications, expiries, funding, and execution assumptions can differ materially from live markets. Coin Spot and Coin Futures are educational simulations only and are not cryptocurrency custody, exchange, derivative, or trading services. You must not rely on NivCraft as the sole source for a real transaction, compliance obligation, valuation, or emergency decision.
 
@@ -117,7 +117,7 @@ Features may be enabled, disabled, limited by platform or plan, placed in mainte
 
 You may stop using NivCraft or delete your account at any time. We may restrict or terminate access where reasonably necessary for a Terms violation, security risk, abuse, legal request, non-payment, provider restriction, or service discontinuation. Where appropriate, we will provide notice and a reasonable opportunity to address the issue.
 
-Account deletion runs the same centralized process whether you start it in the app or ask NivCraft support to run it on your verified request, and any lawful retention is described in the [Privacy Policy](privacy-policy.md) and [Account and Data Deletion](delete-account.md) page. Deletion clears your recorded Terms acceptance. If you return, the then-current Terms must be accepted again. Deletion does not cancel a Google Play subscription.
+Account deletion runs the same centralized process whether you start it in the app or ask NivCraft support to run it on your verified request, and any lawful retention is described in the [Privacy Policy](privacy-policy.md) and [Account and Data Deletion](delete-account.md) page. Deletion removes the synchronized watchlists, strategies, closed trade history, and Signals, Full Universe Scan (Universal Scan), and Live F&O settings held by NivCraft. In-app deletion also clears the local account data on that device, including scan histories and saved backtest results. Support-initiated deletion cannot remotely erase device-only data on other devices; follow the Account and Data Deletion page to clear those copies. Deletion clears your recorded Terms acceptance. If you return, the then-current Terms must be accepted again. Deletion does not cancel a Google Play subscription.
 
 ## 16. Disclaimers
 

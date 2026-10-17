@@ -5,3 +5,6 @@ markdown: kramdown
 
 github:
   is_project_page: false
+
+exclude:
+  - test

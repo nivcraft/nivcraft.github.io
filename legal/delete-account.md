@@ -1,6 +1,8 @@
 # NivCraft Account and Data Deletion
 
-NivCraft users can request deletion of their app account and associated data by either method below. Both methods run the **same centralized deletion process** on NivCraft's backend, so the outcome is identical.
+**Last updated:** 17 October 2026
+
+NivCraft users can request deletion of their app account and associated data by either method below. Both methods run the **same centralized deletion process** on NivCraft's backend, so the backend data-removal outcome is identical. In-app deletion also clears local account data on the device where you perform it; a support request cannot remotely erase other devices.
 
 ## Delete in the app
 
@@ -23,11 +25,11 @@ Deleting your NivCraft account **does not cancel a Google Play subscription**. G
 
 ## What is deleted and what may be retained
 
-After verification, the centralized deletion process deletes or de-identifies profile, watchlist, paper-trading history synchronized for ranking and restore, Community (including sharing preferences and consent records), broker-access grants, support-chat, push-device, device-session, and similar user-specific data held by NivCraft. Authored Community items and their child comments, votes, mentions, and queued notifications are removed together. Recorded Terms acceptance is cleared. If you later return, you must accept the then-current Terms again.
+After verification, the centralized deletion process deletes or de-identifies profile, watchlist, strategy, paper-trading history synchronized for ranking and restore, synchronized Signals settings and scan scope, Full Universe Scan (Universal Scan) settings, Live F&O settings and overrides, Community (including sharing preferences and consent records), broker-access grants, support-chat, push-device, device-session, and similar user-specific data held by NivCraft. Authored Community items and their child comments, votes, mentions, and queued notifications are removed together. Recorded Terms acceptance is cleared. If you later return, you must accept the then-current Terms again.
 
 If you connected a broker through your own developer app (Upstox or FYERS), its API Key, API Secret, and any Analytics Token are stored only on your device and are never held by NivCraft's backend; deleting the account in the app clears them from that device the same way it clears your chart drawings, indicator templates, chart trading display state, and price alerts, which are also device-only. Open paper positions and pending paper orders are local-first device data; deletion in the app clears them from that device. A web or email request deletes NivCraft-held account data but cannot reach a device that is offline or no longer connected.
 
-If you delete the account in the app, NivCraft clears the active local session and local account data on that device. A web or email request cannot remotely erase data stored on another device that is offline or no longer connected to NivCraft; after a web request, clear NivCraft app data or uninstall NivCraft on each device you used. Data stored in device or cloud backups outside NivCraft's control may remain until you remove it or the backup rotates.
+If you delete the account in the app, NivCraft clears the active local session and local account data on that device, including scan settings, generated Signals and Live F&O histories, and saved backtest results. Generated scan histories and saved backtest results are device-only; there is no backend copy of those results to delete. A web or email request cannot remotely erase data stored on another device that is offline or no longer connected to NivCraft; after a web request, clear NivCraft app data or uninstall NivCraft on each device you used. Data stored in device or cloud backups outside NivCraft's control may remain until you remove it or the backup rotates.
 
 On deletion, NivCraft removes the Google Play purchase record and its lifecycle-event log and clears the Google Play purchase token from the payment ledger, so no re-usable purchase credential remains.
 
