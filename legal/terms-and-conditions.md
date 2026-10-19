@@ -1,7 +1,7 @@
 # Terms & Conditions for NivCraft
 
-**Terms version:** 2026-10-17
-**Effective date:** 17 October 2026
+**Terms version:** 2026-10-19
+**Effective date:** 19 October 2026
 
 These Terms & Conditions ("Terms") form an agreement between you and NivCraft ("NivCraft", "we", "us", or "our") concerning the NivCraft mobile application and related services. NivCraft is operated by the developer identified for NivCraft in its Google Play listing. Contact: **support@nivcraft.in**.
 
@@ -77,11 +77,11 @@ Paid access begins only after successful server verification of your Google Play
 
 Unless a plan is expressly offered as one-time, subscriptions are **auto-renewing**: Google Play automatically renews the subscription and charges the renewal price at the start of each new period until you cancel. NivCraft keeps your entitlement in step with the state Google Play reports, including renewal, cancellation, grace period (a short window while Google retries a failed payment), account hold, pause, and expiry.
 
-**Managing and cancelling:** you manage or cancel the subscription in the Google Play app, or at play.google.com/store/account/subscriptions, or via the "Manage subscription" link on the NivCraft Subscription page, which opens Google Play. If you cancel, you keep paid access until the end of the period you have already paid for, and the plan then does not renew. NivCraft cannot cancel, refund, or change a Google Play subscription on your behalf.
+**Managing and cancelling:** you manage or cancel the subscription in the Google Play app, or at play.google.com/store/account/subscriptions, or via the "Manage subscription" link on the NivCraft Subscription page, which opens Google Play. If you cancel, you keep paid access until the end of the period you have already paid for, and the plan then does not renew. NivCraft does not issue Google Play refunds or change your subscription payment method. The account-deletion process requests renewal cancellation as described below.
 
 **Refunds** are handled by Google Play under its refund policy and applicable law; contact Google Play for a refund request.
 
-**Deleting the NivCraft app or your NivCraft account does not cancel a Google Play subscription** and does not stop Google Play from charging renewals. Cancel in Google Play to stop future charges. Deleting your NivCraft account disables renewal handling inside NivCraft only.
+When you request account deletion, NivCraft first asks Google Play to stop future renewal and confirms the reported renewal state before completing backend account-data deletion. If Play is unavailable or cancellation is not confirmed, the account is locked and deletion remains pending while the backend retries; cancellation and deletion are not represented as complete. You can also manage or cancel directly in Google Play at play.google.com/store/account/subscriptions. Deleting or uninstalling the app alone does not cancel a subscription. Stopping renewal does not request a refund or restart the paid period; any existing payment commitment remains governed by Google Play. You may return to use valid remaining access under its original expiry.
 
 Signal detection allowances, where configured for a tier, are daily limits on distinct on-device signal events. Reaching an allowance stops further scanning and disables Signal Notifications until the allowance resets or the entitlement changes.
 
@@ -117,7 +117,11 @@ Features may be enabled, disabled, limited by platform or plan, placed in mainte
 
 You may stop using NivCraft or delete your account at any time. We may restrict or terminate access where reasonably necessary for a Terms violation, security risk, abuse, legal request, non-payment, provider restriction, or service discontinuation. Where appropriate, we will provide notice and a reasonable opportunity to address the issue.
 
-Account deletion runs the same centralized process whether you start it in the app or ask NivCraft support to run it on your verified request, and any lawful retention is described in the [Privacy Policy](privacy-policy.md) and [Account and Data Deletion](delete-account.md) page. Deletion removes the synchronized watchlists, strategies, closed trade history, and Signals and Live F&O settings held by NivCraft. In-app deletion also clears the local account data on that device, including scan histories and saved backtest results. Support-initiated deletion cannot remotely erase device-only data on other devices; follow the Account and Data Deletion page to clear those copies. Deletion clears your recorded Terms acceptance. If you return, the then-current Terms must be accepted again. Deletion does not cancel a Google Play subscription.
+Account deletion runs the same centralized process whether you start it in the app or ask NivCraft support to run it on your verified request, and any lawful retention is described in the [Privacy Policy](privacy-policy.md) and [Account and Data Deletion](delete-account.md) page. Deletion removes the synchronized watchlists, strategies, closed trade history, and Signals and Live F&O settings held by NivCraft. Accepted in-app deletion also clears the local account data on that device, including scan histories and saved backtest results. Support-initiated deletion cannot remotely erase device-only data on other devices; follow the Account and Data Deletion page to clear those copies. Deletion clears your recorded Terms acceptance. If you return, the then-current Terms must be accepted again. Deletion requests renewal cancellation and remains pending until cancellation is confirmed.
+
+NivCraft retains a restricted entitlement grant-and-revocation ledger and de-identified Google Play access-history events, including tier or plan, grant date, original expiry and revocation status. These records remain linked to a one-way account-identity hash so that, if you later sign up with the same verified identity, valid remaining premium access can be recognized without restarting its expiry or issuing duplicate welcome or referral rewards. Expired or revoked access is not renewed by returning. Retained history does not recreate deleted profile, Community, support, watchlist, wallet-balance, order, position or practice-trading content. Reusable Google Play purchase tokens are removed from operational records, access-history events and retained payment references after renewal cancellation is confirmed. Restricted retention is limited to these service-continuity, entitlement-integrity, fraud-prevention, dispute and legal/accounting purposes; contact support@nivcraft.in about a retained record.
+
+Once the server accepts an in-app account-deletion request, local user data on that device is cleared even if backend billing or identity deletion remains pending. A device-local cleanup journal resumes interrupted cleanup when the app is next opened. This does not remotely erase unopened or offline devices.
 
 ## 16. Disclaimers
 
